@@ -22,7 +22,7 @@ set(BUILD_SHARED_LIBS ON)
 option(JANSSON_BUILD_DOCS OFF)
 set(JANSSON_BUILD_SHARED_LIBS ON CACHE BOOL "")
 
-add_compile_options(-Oz -Wall -Wextra -DHAVE_CONFIG_H -DPCRE2_CODE_UNIT_WIDTH=8)
+add_compile_options(-Wall -Wextra -DHAVE_CONFIG_H -DPCRE2_CODE_UNIT_WIDTH=8)
 
 add_library(
 	bearssl

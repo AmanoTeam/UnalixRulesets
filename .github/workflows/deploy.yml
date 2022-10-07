@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+        - '**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+      with:
+        submodules: true
+    - name: Build with CMake
+      run: |
+        cmake -DCMAKE_BUILD_TYPE=MinSizeRel ./
+        cmake --build ./ -j 1
+    - name: Parse rulesets file
+      run: |
+        ./main && cp ./CNAME ./public
+    - name: Deploy to Github Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages

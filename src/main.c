@@ -274,7 +274,7 @@ int main() {
 		exit(EXIT_FAILURE);
 	}
 	
-	char* buffer = json_dumps(providers, JSON_COMPACT);
+	char* buffer = json_dumps(tree, JSON_COMPACT);
 	const size_t buffer_size = strlen(buffer);
 	
 	const size_t wsize = fwrite(buffer, sizeof(*buffer), buffer_size, file);
