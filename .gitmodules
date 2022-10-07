@@ -1,0 +1,9 @@
+[submodule "submodules/jansson"]
+	path = submodules/jansson
+	url = https://github.com/akheron/jansson
+[submodule "submodules/bearssl"]
+	path = submodules/bearssl
+	url = https://www.bearssl.org/git/BearSSL
+[submodule "submodules/pcre2"]
+	path = submodules/pcre2
+	url = https://github.com/PCRE2Project/pcre2
